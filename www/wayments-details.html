@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ggn international</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header">
+
+		<div class="logo-header div-table">
+			<div class="div-row">
+				
+				<div class="header-left div-cell">
+					<img src="images/logo.svg" class="img-responsive" />
+				</div>
+				
+				<div class="header-right div-cell">
+					<div class="button"><a href="wayments-list.html">Back</a></div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="header-title">
+			<h1>&nbsp;</h1>
+		</div>
+	
+	</div>
+	
+	<div class="content">
+	
+		
+        
+        <div class="wayment-box padding20" style="display:none">
+        
+        	
+        	
+            
+           
+
+        
+        
+        </div>
+        
+        
+        
+        
+ 
+		
+		
+	
+		
+	
+	
+	</div>
+	
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+<script type="text/javascript" src="css/jquery.min.js"></script> 
+<script type="text/javascript" src="cordova.js"></script> 
+<script src="js/bootstrap.js"></script>
+<script>
+function getParam(name)
+{  
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+	var regexS = "[\\?&]"+name+"=([^&#]*)";  
+	var regex = new RegExp( regexS );  
+	var results = regex.exec(window.location.href);
+	if(results == null) return "";  else return results[1];
+}
+
+
+//----------------------------------------------
+$( document ).ready(function() {
+	$('.header-title h1').text(decodeURI(getParam("title")))
+	
+	$.ajax( "http://www.indorerajkot.com/ggncal/get_calender/wayment_details/"+decodeURI(getParam("val")))
+	//$.ajax( "http://localhost/ggncal/get_calender/conversion_details/"+decodeURI(getParam("val")))
+	.done(function(data) {$('.wayment-box').fadeOut( 30 ).html(data).fadeIn(500)})
+	.fail(function(e) {alert( "We are unable to connect server. Please check your connection or try later.");})
+});
+
+</script>

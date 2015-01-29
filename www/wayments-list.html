@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ggn international</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header">
+
+		<div class="logo-header div-table">
+			<div class="div-row">
+				
+				<div class="header-left div-cell">
+					<img src="images/logo.svg" class="img-responsive" />
+				</div>
+				
+				<div class="header-right div-cell">
+					<div class="button"><a href="information-list.html">Back</a></div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="header-title">
+			<h1>WAYMENT REPORTS</h1>
+		</div>
+	
+	</div>
+	
+	<div class="content">
+	
+		<ul class="inner-content">
+
+		</ul>
+	
+	</div>
+	
+</div>
+
+
+
+</body>
+</html>
+
+<script type="text/javascript" src="css/jquery.min.js"></script> 
+<script type="text/javascript" src="cordova.js"></script> 
+<script src="js/bootstrap.js"></script>
+<script>
+//----------------------------------------------
+$( document ).ready(function() {
+	$.ajax( "http://www.indorerajkot.com/ggncal/get_calender/wayment_list/" )
+	.done(function(data) {$('.inner-content').html(data);})
+	.fail(function(e) {alert( "We are unable to connect server. Please check your connection or try later.");
+	})
+});
+
+//----
+</script>
