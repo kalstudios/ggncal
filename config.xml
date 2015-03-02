@@ -23,8 +23,10 @@
 		<splash src="Default-667h.png" width="750" height="1334"/>
 		<splash src="Default-736h.png" width="1242" height="2208"/>
 		<splash src="Default-Landscape-736h.png" width="2208" height="1242"/>
-		 
-		<!-- iPhone / iPod Touch  -->
+    </platform>
+	
+	
+	<!-- iPhone / iPod Touch  -->
 		<icon src="icon-57.png" gap:platform="ios" width="57" height="57" />
 		
 		<icon src="icon-60.png" gap:platform="ios" width="60" height="60" />
@@ -56,6 +58,6 @@
 		<!-- iPad Spotlight and Settings Icon -->
 		<icon src="icon-50.png" gap:platform="ios" width="50" height="50" />
 		<icon src="icon-50@2x.png" gap:platform="ios" width="100" height="100" />
-    </platform>
+	
 	<access origin="*" />
 </widget>
